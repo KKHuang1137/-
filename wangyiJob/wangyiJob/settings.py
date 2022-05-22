@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'wangyiJob.spiders'
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 16
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -66,6 +66,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'wangyiJob.pipelines.WangyijobPipeline': 300,
+   'wangyiJob.pipelines.WangyijobJsonPipeline': 301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -90,3 +91,5 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 LOG_LEVEL = "WARNING"
 LOG_FILE = "wangyi.log"
+# CLOSESPIDER_ITEMCOUNT = 600
+
